@@ -1,6 +1,6 @@
 #import('dart:io');
 
-void main() {
+main() {
   
 File file = new File('hu.xml');
 
