@@ -1,15 +1,14 @@
-#import('dart:dom', prefix:'dom');
 #import('dart:html');
 
 class audioplayer {
    var _playButton;   
-   dom.AudioContext audioContext;
-   dom.AudioBufferSourceNode source;
-   dom.AudioGainNode gainNode;
+   AudioContext audioContext;
+   AudioBufferSourceNode source;
+   AudioGainNode gainNode;
 
    audioplayer() {
      _playButton = document.query("#play");
-     audioContext = new dom.AudioContext();
+     audioContext = new AudioContext();
      gainNode = audioContext.createGainNode();
      
      source = audioContext.createBufferSource();
@@ -29,7 +28,7 @@ class audioplayer {
   }
 
   void _loadSound(String name) {
-     dom.XMLHttpRequest xhr = new dom.XMLHttpRequest();
+     XMLHttpRequest xhr = new XMLHttpRequest();
      xhr.open("GET", name, true);
      xhr.responseType = "arraybuffer";
      xhr.addEventListener('load', (e) {
