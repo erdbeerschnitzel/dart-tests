@@ -2,7 +2,7 @@
 
 echo() {
   
- port.receive((msg, reply) => reply.send("Echo: " + calculate(msg)));
+ port.receive((msg, reply) => reply.send("Echo: ${calculate(msg)}"));
 }
 
 int calculate(int a){
@@ -30,4 +30,5 @@ void main() {
  SendPort sendPort = spawnFunction(echo);
  sendPort.call(5).then((response) => print(response));
  //sendPort.call("w").then((response) => print(response));
+ print("fresse da unten");
 }

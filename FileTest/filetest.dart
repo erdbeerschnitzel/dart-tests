@@ -2,8 +2,8 @@
 
 main() {
   
-File file = new File('hu.xml');
+  File file = new File('hu.xml');
+ 
+  print(file.fullPathSync());
 
-
-print(file.fullPathSync());
 }

@@ -1,18 +1,20 @@
-#import('dart:crypto');
-#import('dart:isolate');
 
 void main() {
   
-  Date d = new Date.now();
   
-  for(int i = 0; i < 100000; i++){
+  for(int a = 0; a < 10; a++){
+   
+    Date d = new Date.now();
     
-    ggt(31232004,i);
+    for(int i = 0; i < 100000; i++){
+      
+      ggt(31232004,i);
+      
+    }
     
-  }
-  
-  print("${new Date.now().difference(d)}:");
-  
+    print("${new Date.now().difference(d)}:");
+    
+  } 
 }
 
 

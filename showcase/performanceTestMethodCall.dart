@@ -1,5 +1,3 @@
-#import('dart:io');
-
 abstract class A { 
     double x = 2.0; 
     abstract void aMethod(); 
@@ -29,10 +27,14 @@ void main() {
   A b = new B(); 
   A c = new C(); 
   A d = new D(); 
-  test(b); // warmup 
-  test(b); 
-  test(b);
-  test(c);
-  test(d); 
+  
+  for(int a = 0; a < 5; a++){
+    test(b); // warmup 
+    test(b); 
+    test(b);
+    test(c);
+    test(d); 
+  }
+
     
 } 

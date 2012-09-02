@@ -1,10 +1,12 @@
 #import('dart:crypto');
 
 void main() {
+  
+  for(int a = 0; a < 10; a++){
+    
+    Date d = new Date.now();      
 
-  Date d = new Date.now();      
-
-  for(int i = 0; i < 100000; i++){   
+    for(int i = 0; i < 100000; i++){   
 
       var x = new MD5().update('This is Dart!$i'.charCodes()).digest();    
 
@@ -13,5 +15,9 @@ void main() {
   }     
 
   print("${new Date.now().difference(d)}:");
+    
+  }
+
+
 
 }
