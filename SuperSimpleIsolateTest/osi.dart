@@ -1,51 +1,51 @@
-#import('dart:isolate');
+import 'dart:isolate';
 
 
-void echo() { 
+void echo() {
 
-  port.receive((msg, reply) => reply.send("Echo: $msg")); 
-  
-  
-  ReceivePort receiver = new ReceivePort(); 
-
-  receiver.receive((msg, reply) {   
+  port.receive((msg, reply) => reply.send("Echo: $msg"));
 
 
-  
+  ReceivePort receiver = new ReceivePort();
+
+  receiver.receive((msg, reply) {
+
+
+
   reply.send("yo");
 
-  });   
+  });
 
  }
 
 
 
- void main() { 
-   
+ void main() {
+
    bool ready1, ready2 = false;
-   
+
    print(ready1);
    print(ready2);
 
-   SendPort sender = spawnFunction(echo); 
+   SendPort sender = spawnFunction(echo);
 
-   ReceivePort receiver = new ReceivePort(); 
+   ReceivePort receiver = new ReceivePort();
 
-   receiver.receive((msg, _) {   
-     
+   receiver.receive((msg, _) {
+
      print(msg);
 
-   if (msg == 'shutdown') { 
+   if (msg == 'shutdown') {
 
      print("shutting");
-     receiver.close(); 
+     receiver.close();
 
-    }  
+    }
 
-   });   
+   });
 
-   sender.send("do something", receiver.toSendPort()); 
-   
+   sender.send("do something", receiver.toSendPort());
+
    print("send befehl");
 
  }

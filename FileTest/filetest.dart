@@ -1,9 +1,9 @@
-#import('dart:io');
+import 'dart:io';
 
 main() {
-  
-  File file = new File('hu.xml');
- 
+
+  File file = new File('/hu.xml');
+
   print(file.fullPathSync());
 
 }

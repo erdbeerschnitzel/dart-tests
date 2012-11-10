@@ -1,8 +1,8 @@
-#import('dart:html');
-#import('dart:math');
+import 'dart:html';
+import 'dart:math';
 
 class audioplayer {
-   var _playButton;   
+   var _playButton;
    AudioContext audioContext;
    AudioBufferSourceNode source;
    AudioGainNode gainNode;
@@ -11,7 +11,7 @@ class audioplayer {
      _playButton = document.query("#play");
      audioContext = new AudioContext();
      gainNode = audioContext.createGainNode();
-     
+
      source = audioContext.createBufferSource();
      source.connect(gainNode, 0, 0);
      _playButton.on.click.add((e) {
@@ -19,10 +19,10 @@ class audioplayer {
      });
 
      gainNode.connect(audioContext.destination, 0, 0);
-     
+
      document.query("#volume").on.change.add((e) {
-       var volume = parseInt(e.target.value);
-       var max = parseInt(e.target.max);
+       var volume = int.parse(e.target.value);
+       var max = int.parse(e.target.max);
        var fraction = volume / max;
        gainNode.gain.value = fraction * fraction;
      });
