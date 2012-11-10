@@ -1,6 +1,7 @@
+part of base;
 
-interface interface2 {
-  
+abstract class interface2 {
+
   listen(String host, int port);
-  
+
 }

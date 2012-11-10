@@ -1,21 +1,21 @@
-#library('base');
-#source('interface1.dart');
-#source('interface2.dart');
-#source('interface1impl.dart');
+library base;
+part 'interface1.dart';
+part 'interface2.dart';
+part 'interface1impl.dart';
 
 class Base implements interface1, interface2 {
-  
 
+  void listen(String host, int port){
+
+  }
 }
 
 main(){
-  
-  //Base base = new Base();
-  
+
   int i = 5;
-  
+
   print(i);
-  
+
 
   List<String> list = new List<String>();
 
@@ -32,5 +32,5 @@ main(){
   print(new List() is List<String>); // Ausgabe: true
 
   print(list is List); // Ausgabe: true
-  //print(base.listen("ex.com", 88));
+
 }

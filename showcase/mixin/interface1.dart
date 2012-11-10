@@ -1,7 +1,8 @@
+part of base;
 
 
-interface interface1 default interface1impl {
-  
+abstract class interface1 {
+
   listen(String host, int port);
-  
+
 }

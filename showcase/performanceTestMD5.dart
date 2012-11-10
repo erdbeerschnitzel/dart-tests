@@ -1,21 +1,21 @@
-#import('dart:crypto');
+import 'dart:crypto';
 
 void main() {
-  
+
   for(int a = 0; a < 10; a++){
-    
-    Date d = new Date.now();      
 
-    for(int i = 0; i < 100000; i++){   
+    Date d = new Date.now();
 
-      var x = new MD5().update('This is Dart!$i'.charCodes()).digest();    
+    for(int i = 0; i < 100000; i++){
 
-     //print("${new Date.now()}: ${CryptoUtils.bytesToHex(x)}");  
+      var x = new MD5().update('This is Dart!$i'.charCodes).digest();
 
-  }     
+     //print("${new Date.now()}: ${CryptoUtils.bytesToHex(x)}");
+
+  }
 
   print("${new Date.now().difference(d)}:");
-    
+
   }
 
 
