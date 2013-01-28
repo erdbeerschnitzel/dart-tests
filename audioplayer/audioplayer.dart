@@ -33,10 +33,10 @@ class audioplayer {
      xhr.open("GET", name, true);
      xhr.responseType = "arraybuffer";
      xhr.on.load.add((e) {
-       audioContext.decodeAudioData(xhr.response, function(buffer) {
+       audioContext.decodeAudioData(xhr.response, (buffer) {
          source.buffer = buffer;
          _playButton.disabled = false;
-       }, function(ex) {
+       }, (ex) {
          print('Error decoding MP3 file');
        });
      });
