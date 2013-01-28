@@ -41,7 +41,7 @@ main(){
 
   void reqChange() {
     if (RSSRequestObject.readyState == 4 && RSSRequestObject.status == 200) {
-      Document feedDocument = RSSRequestObject.responseXML;
+      Document feedDocument = RSSRequestObject.responseXml;
       //show(RSSRequestObject.responseXML.toString());
     } else {
       //show(RSSRequestObject.statusText);
